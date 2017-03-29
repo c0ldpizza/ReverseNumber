@@ -16,8 +16,9 @@ namespace ReverseNumber
 
             try
             {
-                int n = Convert.ToInt16(inputNum);
-                int result = 0;
+                int n = Convert.ToInt16(inputNum);                          //Checks to make sure the user entered an integer
+
+                int result = 0;                                             //Function to reverse an integer
                 int rem;
                 while (n > 0)
                 {
@@ -32,7 +33,7 @@ namespace ReverseNumber
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message + " Please enter an integer.");
+                Console.WriteLine("Error: " + e.Message + " Please enter an integer.");     //Prompts the user if they enter a non-integer
                 Console.Read();
             }
                        
