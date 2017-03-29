@@ -12,19 +12,30 @@ namespace ReverseNumber
         {
             Console.WriteLine("What number would you like to reverse?");    //Prompts user to enter a number
 
-            int n = Convert.ToInt16(Console.ReadLine());                    //Reads input from user
-            int result = 0;
-            int rem;
-            while (n > 0)
+            String inputNum = Console.ReadLine();                           //Reads input from user
+
+            try
             {
-                rem = n % 10;
-                n = n / 10;
-                result = result * 10 + rem;
+                int n = Convert.ToInt16(inputNum);
+                int result = 0;
+                int rem;
+                while (n > 0)
+                {
+                    rem = n % 10;
+                    n = n / 10;
+                    result = result * 10 + rem;
+                }
+
+                Console.WriteLine("The result is " + result.ToString());        //Returns result to user
+
+                Console.Read();
             }
-
-            Console.WriteLine("The result is " + result.ToString());        
-
-            Console.Read();
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message + " Please enter an integer.");
+                Console.Read();
+            }
+                       
         }
     }
 }
